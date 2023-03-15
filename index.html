@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        section {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        section img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #container {
+            background-color: white;
+            width: 100%;
+            height: 60%;
+            max-height: 100%;
+            position: absolute;
+            top: 0%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            border-bottom: 2px solid rgb(46, 123, 238);
+        }
+        
+        #form-container {
+            width: 65%;
+            height: 100%;
+        }
+        
+        #info-container {
+            width: 35%;
+            height: 100%;
+            background-color: rgb(46, 123, 238);
+            text-align: center;
+            padding: 5%;
+        }
+        
+        #info-container p,
+        #info-container h3 {
+            position: relative;
+            top: 30%;
+            color: white;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        option[disabled] {
+            display: none;
+        }
+        
+        i {
+            position: relative;
+            left: 82%;
+            top: -7%;
+            font-size: 0.6rem;
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration: none;
+            color: rgb(46, 123, 238);
+            ;
+        }
+        
+        form {
+            width: 90%;
+            max-width: 700px;
+            height: 80%;
+            margin: 0 auto;
+            margin-top: 15%;
+        }
+        
+        input,
+        select,
+        o {
+            display: block;
+            width: 80%;
+            max-width: 500px;
+            height: 8%;
+            max-height: 50px;
+            margin: 1% auto;
+            border: 2px solid rgb(228, 225, 225);
+            color: gray;
+        }
+        
+        h2,
+        p {
+            display: block;
+            width: 80%;
+            max-width: 500px;
+            margin: 2% auto;
+        }
+        
+        span {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+            color: gray;
+            font-size: 0.8rem;
+            position: relative;
+            top: -4%;
+        }
+        
+        #btn {
+            color: black;
+            background-color: rgb(153, 147, 147);
+            border: 2px solid gray;
+        }
+        
+        #btn:hover {
+            border: 2px solid rgb(228, 225, 225);
+            color: gray;
+            background-color: rgb(192, 187, 187);
+        }
+        
+        #agree {
+            font-size: 0.7em;
+        }
+        
+        @media only screen and (min-width: 700px) {
+            body {
+                font-size: 17px;
+            }
+            #container {
+                height: 75%;
+            }
+            i {
+                top: -6%;
+            }
+        }
+        
+        @media only screen and (min-width: 900px) {
+            body {
+                font-size: 19px;
+            }
+            #container {
+                height: 85%;
+            }
+        }
+        
+        @media only screen and (min-width: 1100px) {
+            body {
+                font-size: 21px;
+            }
+            #container {
+                height: 90%;
+            }
+        }
+        
+        @media only screen and (min-width: 1300px) {
+            body {
+                font-size: 23px;
+            }
+            #container {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="rocket.jpg" alt="photo">
+    </section>
+    <div id="container">
+        <div id="form-container">
+            <form action="post">
+                <h2>Let's set up your account</h2>
+
+                <p>already have an account? <a href="">sign in</a></p>
+
+                <input type="text" placeholder="Your name" required><br>
+
+                <input type="email" name="" id="" placeholder="Email address" required><br>
+
+
+                <select name="" id="" required>
+                   <option value="i would describe my user type as" disabled selected>I would describe my user type as</option>
+                   <option value="individual">individual</option>
+                   <option value="organization">organization</option>
+                </select><br>
+
+                <input type="password" name="" id="password" placeholder="password" required>
+                <i class="far fa-eye" id="toggleIcon">.</i>
+
+                <span>minimum 8 characters.</span><br>
+
+                <input type="button" value="Next" id="btn">
+
+                <p id="agree">By clicking the "Next" button, you agree to creating a free account and to <a href="">Terms of Services</a> and <a href="">Privacy Policy</a></p>
+            </form>
+        </div>
+
+
+        <div id="info-container">
+            <h3>Live as You Wish</h3><br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nam dolore! Quasi quidem libero maiores nulla dicta explicabo.</p>
+        </div>
+    </div>
+
+    <script>
+        function togglefunction() {
+            var eyeIcon = document.getElementById("toggleIcon");
+            var password = document.getElementById("password");
+            eyeIcon.addEventListener("click", function() {
+                if (password.type === "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            })
+
+        }
+
+        togglefunction()
+    </script>
+</body>
+
+</html>
